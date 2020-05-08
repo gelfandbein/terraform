@@ -10,12 +10,12 @@
 
 
 provider "aws" {
-  region  = "eu-central-1"
+  region                  = "eu-central-1"
   shared_credentials_file = ".credentials"
-
+  version                 = "~> 2.61"
 }
 
 resource "aws_instance" "test-2-eu-central-1" {
-  ami = "ami-03ab4e8f1d88ce614"
+  ami           = "ami-03ab4e8f1d88ce614"
   instance_type = "t2.micro"
 }

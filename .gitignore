@@ -1,5 +1,6 @@
 .credentials
 .git
+.terraform
 
 # Local .terraform directories
 **/.terraform/*
