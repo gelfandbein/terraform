@@ -25,6 +25,11 @@ variable "zabbix_server" {
   default = "194.79.22.154"
 }
 
+variable "user_data_server" {
+  type    = string
+  default = "test.lt.com.ua"
+}
+
 variable "users" {
   type    = list
   default = ["root", "user1", "user2"]

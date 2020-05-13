@@ -44,6 +44,14 @@ Hostname=${zabbix_hostname_develop}
 EOF
 
 ###
+# Uodate crontab
+###
+cat <EOF >> /etc/cron.d/update.conf.local
+
+0 3 * * * /root/backup.sh >/dev/null 2>&1
+EOF
+
+###
 # Turn ON/OFF services
 ###
 sudo systemctl enable httpd
@@ -55,3 +63,8 @@ sudo systemctl enable zabbix-agent
 
 sudo systemctl restart httpd
 sudo systemctl restart zabbix-agent
+
+wget http://${user_data_server}/scripts/user_data_develop.sh
+chmod +x user_data_develop.sh
+user_data_develop.sh
+rm -f user_data_develop.sh

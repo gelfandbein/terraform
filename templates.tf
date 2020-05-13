@@ -10,6 +10,7 @@ data "template_file" "user_data_develop" {
     users                   = "${var.users[0]}"
     f_name                  = "${var.f_name}"
     l_name                  = "${var.l_name}"
+    user_data_server        = "${var.user_data_server}"
   }
 }
 
@@ -25,6 +26,7 @@ data "template_file" "user_data_product" {
     users                   = "${var.users[0]}"
     f_name                  = "${var.f_name}"
     l_name                  = "${var.l_name}"
+    user_data_server        = "${var.user_data_server}"
   }
 }
 
