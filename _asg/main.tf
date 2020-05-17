@@ -20,12 +20,6 @@ provider "template" {
 
 ####################################################################################################
 
-resource "aws_placement_group" "test" {
-  name     = "test"
-  strategy = "cluster"
-}
-
-
 resource "aws_launch_configuration" "web" {
   name_prefix     = "LaunchConf-"
   image_id        = data.aws_ami.latest_amzn2.id
@@ -46,7 +40,6 @@ resource "aws_autoscaling_group" "web" {
   max_size             = 3
   min_size             = 2
   min_elb_capacity     = 2
-  # placement_group           = aws_placement_group.test.id
   health_check_grace_period = 300
   health_check_type         = "ELB" # or EC2
   force_delete              = true
@@ -56,11 +49,6 @@ resource "aws_autoscaling_group" "web" {
   lifecycle {
     create_before_destroy = true
   }
-
-  #launch_template {
-  #   id      = aws_launch_template.web.id
-  #   version = "$Latest"
-  #}
 
   tags = [{
     key                 = "Name"
