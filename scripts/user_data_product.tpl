@@ -19,11 +19,11 @@ cat <<EOF > /var/www/html/index.html
 <html>
 <meta http-equiv="refresh" content="60">
 <body>
-<br><h2>PRODUCT public IP: $PublicIP</h2>
-<br><h2>PRODUCT local IP: $LocalIP</h2>
+<br><h2>${zabbix_hostname_product} public IP: $PublicIP</h2>
+<br><h2>${zabbix_hostname_product} local IP: $LocalIP</h2>
 <br>Build by Terraform!
 <br>Owner ${f_name} ${l_name}
-<br>Created $Cur_Date
+<br>Created at $Cur_Date
 <br>
 </body>
 </html>

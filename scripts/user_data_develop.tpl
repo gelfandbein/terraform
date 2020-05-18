@@ -19,8 +19,8 @@ cat <<EOF > /var/www/html/index.html
 <html>
 <meta http-equiv="refresh" content="60">
 <body>
-<br><h2>DEVELOP public IP: $PublicIP</h2>
-<br><h2>DEVELOP local IP: $LocalIP</h2>
+<br><h2>${zabbix_hostname_develop} public IP: $PublicIP</h2>
+<br><h2>${zabbix_hostname_develop} local IP: $LocalIP</h2>
 <br>Build by Terraform!
 <br>Owner ${f_name} ${l_name}
 <br>Created at $Cur_Date
