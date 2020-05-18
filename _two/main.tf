@@ -60,7 +60,7 @@ resource "aws_instance" "develop" {
 
   vpc_security_group_ids = [aws_security_group.develop_sg.id]
 
-  user_data = data.template_file.user_data_develop.rendered
+  user_data = data.template_file.user-data-develop.rendered
 
   # depends_on = [aws_instance.product]
 
@@ -103,7 +103,7 @@ resource "aws_instance" "product" {
 
   vpc_security_group_ids = [aws_security_group.product_sg.id]
 
-  user_data = data.template_file.user_data_product.rendered
+  user_data = data.template_file.user-data-product.rendered
 
   # depends_on = [aws_instance.develop]
 

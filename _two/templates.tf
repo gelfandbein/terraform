@@ -1,8 +1,8 @@
 ####################################################################################################
 # DEVELOP SERVER
 ####################################################################################################
-data "template_file" "user_data_develop" {
-  template = "${file("${path.module}/scripts/user_data_develop.tpl")}"
+data "template_file" "user-data-develop" {
+  template = "${file("${path.module}/scripts/user-data-develop.tpl")}"
 
   vars = {
     zabbix_server           = "${var.zabbix_server}"
@@ -17,8 +17,8 @@ data "template_file" "user_data_develop" {
 ####################################################################################################
 # PRODUCT SERVER
 ####################################################################################################
-data "template_file" "user_data_product" {
-  template = "${file("${path.module}/scripts/user_data_product.tpl")}"
+data "template_file" "user-data-product" {
+  template = "${file("${path.module}/scripts/user-data-product.tpl")}"
 
   vars = {
     zabbix_server           = "${var.zabbix_server}"
