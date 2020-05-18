@@ -9,12 +9,12 @@ variable aws_credentials {
 
 variable "f_name" {
   type    = string
-  default = "Boris"
+  default = "John"
 }
 
 variable "l_name" {
   type    = string
-  default = "Gelfandbein"
+  default = "Wick"
 }
 
 ############################

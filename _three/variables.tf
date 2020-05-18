@@ -4,12 +4,12 @@ variable aws_region { default = "eu-central-1" }
 # servers
 variable "f_name" {
   type    = string
-  default = "Boris"
+  default = "John"
 }
 
 variable "l_name" {
   type    = string
-  default = "Gelfandbein"
+  default = "Wick"
 }
 
 
