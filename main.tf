@@ -23,7 +23,7 @@ provider "template" {
 # DEVELOP SERVER
 ####################################################################################################
 resource "aws_eip" "develop-eip" {
-  instance = aws_instance.develop[0].id
+  instance = aws_instance.develop[count.index].id
   count    = "1"
 
   tags = {
@@ -39,6 +39,10 @@ resource "aws_instance" "develop" {
   count         = "1"
   key_name      = "test-1-frankfurt"
   hibernation   = true
+
+  provisioner "local-exec" {
+    command = "echo Hello from AWS Instance Creations!"
+  }
 
   root_block_device {
     encrypted = true
@@ -66,7 +70,7 @@ resource "aws_instance" "develop" {
 # PRODUCT SERVER
 ####################################################################################################
 resource "aws_eip" "product-eip" {
-  instance = aws_instance.product[0].id
+  instance = aws_instance.product[count.index].id
   count    = "1"
 
   tags = {
@@ -101,6 +105,6 @@ resource "aws_instance" "product" {
 
   user_data = data.template_file.user_data_product.rendered
 
-  # depends_on = [aws_instance.product]
+  # depends_on = [aws_instance.develop]
 
 }

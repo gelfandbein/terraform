@@ -21,30 +21,30 @@ output "data_aws_caller_identity" {
 # DEVELOP SERVER
 ####################################################################################################
 output "develop_instance_id" {
-  value = aws_instance.develop[0].id
+  value = aws_instance.develop[*].id
 }
 
 output "develop_public_ip" {
-  value = aws_eip.develop-eip[0].public_ip
+  value = aws_eip.develop-eip[*].public_ip
 }
 
 output "develop_private_ip" {
-  value = aws_eip.develop-eip[0].private_ip
+  value = aws_eip.develop-eip[*].private_ip
 }
 
 ####################################################################################################
 # PRODUCT SERVER
 ####################################################################################################
 output "product_instance_id" {
-  value = aws_instance.product[0].id
+  value = aws_instance.product[*].id
 }
 
 output "product_public_ip" {
-  value = aws_eip.product-eip[0].public_ip
+  value = aws_eip.product-eip[*].public_ip
 }
 
 output "product_private_ip" {
-  value = aws_eip.product-eip[0].private_ip
+  value = aws_eip.product-eip[*].private_ip
 }
 
 ####################################################################################################
