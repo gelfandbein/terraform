@@ -25,9 +25,9 @@ variable "zabbix_server" {
   default = "194.79.22.154"
 }
 
-variable "user_data_server" {
+variable "data_link" {
   type    = string
-  default = "test.lt.com.ua"
+  default = "https://gbl-user-data.s3.eu-central-1.amazonaws.com"
 }
 
 variable "users" {
@@ -37,11 +37,11 @@ variable "users" {
 
 variable "zabbix_hostname_develop" {
   type    = string
-  default = "aws_develop"
+  default = "aws-develop"
 }
 
 variable "zabbix_hostname_product" {
   type    = string
-  default = "aws_product"
+  default = "aws-product"
 }
 

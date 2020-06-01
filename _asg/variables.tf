@@ -8,9 +8,9 @@ variable aws_credentials {
 }
 
 
-variable "data_server" {
+variable "data_link" {
   type    = string
-  default = "http://test.lt.com.ua"
+  default = "https://gbl-user-data.s3.eu-central-1.amazonaws.com"
 }
 
 variable "f_name" {

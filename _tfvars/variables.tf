@@ -8,9 +8,9 @@ variable aws_credentials {
   default = "~/.aws/credentials"
 }
 
-variable "data_server" {
+variable "data_link" {
   type    = string
-  default = "test.lt.com.ua"
+  default = "https://gbl-user-data.s3.eu-central-1.amazonaws.com"
 }
 
 variable "zabbix_server" {
@@ -20,7 +20,7 @@ variable "zabbix_server" {
 
 variable "zabbix_hostname" {
   type    = string
-  default = "aws_develop"
+  default = "aws-develop"
 }
 
 variable "f_name" {

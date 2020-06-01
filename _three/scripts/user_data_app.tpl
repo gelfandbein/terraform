@@ -1,7 +1,7 @@
 #!/bin/sh
 
 sudo yum -y update
-sudo yum -y install httpd
+sudo yum -y install httpd ps_mem
 sudo yum -y install http://repo.zabbix.com/zabbix/4.2/rhel/6/x86_64/zabbix-agent-4.2.2-1.el6.x86_64.rpm
 sudo yum -y install mc
 

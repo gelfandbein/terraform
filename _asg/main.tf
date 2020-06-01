@@ -7,6 +7,16 @@
 #
 ####################################################################################################
 
+#terraform {
+#  backend "remote" {
+#    organization = "gelfandbein"
+
+#    workspaces {
+#      name = "terraform"
+#    }
+#  }
+#}
+
 provider "aws" {
   region                  = var.aws_region
   shared_credentials_file = var.aws_credentials
@@ -35,11 +45,11 @@ resource "aws_launch_configuration" "web" {
 }
 
 resource "aws_autoscaling_group" "web" {
-  name                 = "ASG-${aws_launch_configuration.web.id}"
-  launch_configuration = aws_launch_configuration.web.name
-  max_size             = 3
-  min_size             = 2
-  min_elb_capacity     = 2
+  name                      = "ASG-${aws_launch_configuration.web.id}"
+  launch_configuration      = aws_launch_configuration.web.name
+  max_size                  = 3
+  min_size                  = 2
+  min_elb_capacity          = 2
   health_check_grace_period = 300
   health_check_type         = "ELB" # or EC2
   force_delete              = true
@@ -70,7 +80,7 @@ resource "aws_launch_template" "web" {
 
 
 resource "aws_elb" "web" {
-  name                 = "WebServer-ELB"
+  name               = "WebServer-ELB"
   availability_zones = [data.aws_availability_zones.available.names[0], data.aws_availability_zones.available.names[1]]
   security_groups    = [aws_security_group.web.id]
   listener {

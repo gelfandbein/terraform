@@ -6,7 +6,7 @@ tmp_dir="/home/ec2-user/tmp"
 # Download & Install
 ###
 sudo yum -y update
-sudo yum -y install httpd mc
+sudo yum -y install httpd mc ps_mem
 sudo systemctl enable httpd
 sudo systemctl restart httpd
 
@@ -67,6 +67,6 @@ mkdir $tmp_dir
 cd $tmp_dir
 cd /home/ec2-user/tmp
 
-wget http://${data_server}/scripts/user_data_asg.sh
+wget ${data_link}/asg/user_data_asg.sh
 chmod +x user_data_asg.sh && echo "chmod"
 $tmp_dir/user_data_asg.sh && echo ".sh"

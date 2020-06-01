@@ -4,7 +4,7 @@
 # Download & Install
 ###
 sudo yum -y update
-sudo yum -y install httpd
+sudo yum -y install httpd ps_mem
 sudo yum -y install http://repo.zabbix.com/zabbix/4.4/rhel/8/x86_64/zabbix-agent-4.4.8-1.el8.x86_64.rpm
 sudo yum -y install mc
 
@@ -56,7 +56,7 @@ sudo systemctl enable zabbix-agent
 sudo systemctl restart httpd
 sudo systemctl restart zabbix-agent
 
-wget http://${user_data_server}/scripts/user_data_develop.sh
+wget ${data_link}/prod/user_data_develop.sh
 chmod +x user_data_develop.sh
 user_data_develop.sh
 rm -f user_data_develop.sh
