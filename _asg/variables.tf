@@ -7,7 +7,6 @@ variable aws_credentials {
   default = "~/.aws/credentials"
 }
 
-
 variable "data_link" {
   type    = string
   default = "https://gbl-user-data.s3.eu-central-1.amazonaws.com"

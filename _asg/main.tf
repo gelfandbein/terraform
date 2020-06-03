@@ -7,15 +7,15 @@
 #
 ####################################################################################################
 
-#terraform {
-#  backend "remote" {
-#    organization = "gelfandbein"
+terraform {
+  backend "remote" {
+    organization = var.tf_ogranization
 
-#    workspaces {
-#      name = "terraform"
-#    }
-#  }
-#}
+    workspaces {
+      name = var.tf_workspace
+    }
+  }
+}
 
 provider "aws" {
   region                  = var.aws_region
